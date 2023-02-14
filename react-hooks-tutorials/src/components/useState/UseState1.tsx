@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-const UseState1 = () => {
-    const [count, setCount] = useState(0);
+const UseState1 = (): JSX.Element => {
+  const [count, setCount] = useState(0)
 
-    return (
-        <div>
-            <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Click me</button>
-        </div>
-    );
-};
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button
+        onClick={() => {
+          setCount(count + 1)
+        }}
+      >
+        Click me
+      </button>
+    </div>
+  )
+}
 
-export default UseState1;
+export default UseState1
