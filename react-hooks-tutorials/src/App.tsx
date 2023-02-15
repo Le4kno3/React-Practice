@@ -13,6 +13,7 @@ import TaskAppBefore from './components/stateManagement/reducer_tutorial/without
 import WithEffects from './components/useEffects/for_understanding_rendering/with-useeffects/WithEffects'
 import WithoutEffects from './components/useEffects/for_understanding_rendering/without-useeffects/WithoutEffects'
 import SyncApp from './components/useEffects/for_synchronization/SyncApp'
+import CustomHooks from './components/customHooks/CustomHooks'
 
 const App = (): JSX.Element => {
   return (
@@ -31,6 +32,7 @@ const App = (): JSX.Element => {
       <Route path="/withEffects" element={<WithEffects />}></Route>
       <Route path="/withoutEffects" element={<WithoutEffects />}></Route>
       <Route path="/syncEffects" element={<SyncApp />}></Route>
+      <Route path="/customhooks" element={<CustomHooks />}></Route>
     </Routes>
   )
 }
