@@ -14,26 +14,33 @@ import WithEffects from './components/useEffects/for_understanding_rendering/wit
 import WithoutEffects from './components/useEffects/for_understanding_rendering/without-useeffects/WithoutEffects'
 import SyncApp from './components/useEffects/for_synchronization/SyncApp'
 import CustomHooks from './components/customHooks/CustomHooks'
+import { WagmiProvider } from './components/wagmi1/WagmiContext'
+import Wagmi1 from './components/wagmi1/Wagmi1'
+import UseStateWagmiTest3 from './components/useState/UseStateWagmiTest3'
 
 const App = (): JSX.Element => {
   return (
-    <Routes>
-      <Route path="/" element={<Homepage />}></Route>
-      <Route path="/home" element={<Homepage />}></Route>
-      <Route path="/useEffects1" element={<UseEffects1 />}></Route>
-      <Route path="/useEffects2" element={<UseEffects2 />}></Route>
-      <Route path="/useState1" element={<UseState1 />}></Route>
-      <Route path="/useState2" element={<UseState2 />}></Route>
-      <Route path="/commonparent" element={<CommonParent />}></Route>
-      <Route path="/beforereducer" element={<TaskAppBefore />}></Route>
-      <Route path="/afterreducer1" element={<ReducerTutorial1 />}></Route>
-      <Route path="/afterreducer2" element={<ReducerTutorial2 />}></Route>
-      <Route path="/contextapp1" element={<ContextApp />}></Route>
-      <Route path="/withEffects" element={<WithEffects />}></Route>
-      <Route path="/withoutEffects" element={<WithoutEffects />}></Route>
-      <Route path="/syncEffects" element={<SyncApp />}></Route>
-      <Route path="/customhooks" element={<CustomHooks />}></Route>
-    </Routes>
+    <WagmiProvider>
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/home" element={<Homepage />}></Route>
+        <Route path="/useEffects1" element={<UseEffects1 />}></Route>
+        <Route path="/useEffects2" element={<UseEffects2 />}></Route>
+        <Route path="/useState1" element={<UseState1 />}></Route>
+        <Route path="/useState2" element={<UseState2 />}></Route>
+        <Route path="/commonparent" element={<CommonParent />}></Route>
+        <Route path="/beforereducer" element={<TaskAppBefore />}></Route>
+        <Route path="/afterreducer1" element={<ReducerTutorial1 />}></Route>
+        <Route path="/afterreducer2" element={<ReducerTutorial2 />}></Route>
+        <Route path="/contextapp1" element={<ContextApp />}></Route>
+        <Route path="/withEffects" element={<WithEffects />}></Route>
+        <Route path="/withoutEffects" element={<WithoutEffects />}></Route>
+        <Route path="/syncEffects" element={<SyncApp />}></Route>
+        <Route path="/customhooks" element={<CustomHooks />}></Route>
+        <Route path="/wagmi1" element={<Wagmi1 />}></Route>
+        <Route path="/wagmiTest1" element={<UseStateWagmiTest3 />}></Route>
+      </Routes>
+    </WagmiProvider>
   )
 }
 
