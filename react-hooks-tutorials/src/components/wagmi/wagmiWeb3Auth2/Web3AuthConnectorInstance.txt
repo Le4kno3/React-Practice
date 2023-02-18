@@ -1,0 +1,52 @@
+// Web3Auth Libraries
+import { Web3AuthConnector } from '@web3auth/web3auth-wagmi-connector';
+import { Web3Auth } from '@web3auth/modal';
+import { OpenloginAdapter } from '@web3auth/openlogin-adapter';
+import {
+    clientIdTestnetWeb3Auth,
+    chainConfigProd,
+    clientIdProdWeb3Auth,
+    chainConfigTestnet
+} from '@config';
+import { Chain } from '@wagmi/core';
+
+export default function Web3AuthConnectorInstance(chainsData: Chain[]) {
+    // Create Web3Auth Instance
+    const name = 'Cotry';
+    const iconUrl = 'https://web3auth.io/docs/contents/logo-ethereum.png';
+    const web3AuthInstance = new Web3Auth({
+        clientId: clientIdTestnetWeb3Auth,
+        chainConfig: chainConfigTestnet,
+        uiConfig: {
+            appName: name,
+            theme: 'light',
+            loginMethodsOrder: ['facebook', 'google'],
+            defaultLanguage: 'en',
+            appLogo: 'https://web3auth.io/images/w3a-L-Favicon-1.svg', // Your App Logo Here
+            modalZIndex: '2147483647'
+        }
+    });
+
+    // Add openlogin adapter for customisations
+    const openloginAdapterInstance = new OpenloginAdapter({
+        adapterSettings: {
+            network: 'cyan',
+            uxMode: 'popup',
+            whiteLabel: {
+                name: 'Cotry',
+                logoLight: 'https://web3auth.io/images/w3a-L-Favicon-1.svg',
+                logoDark: 'https://web3auth.io/images/w3a-D-Favicon-1.svg',
+                defaultLanguage: 'en',
+                dark: true // whether to enable dark mode. defaultValue: false
+            }
+        }
+    });
+    web3AuthInstance.configureAdapter(openloginAdapterInstance);
+
+    return new Web3AuthConnector({
+        chains: chainsData,
+        options: {
+            web3AuthInstance
+        }
+    });
+}

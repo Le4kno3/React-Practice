@@ -1,0 +1,61 @@
+import React from 'react';
+import { WagmiConfig, createClient, configureChains } from 'wagmi';
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+    ConnectButton,
+    connectorsForWallets,
+    RainbowKitProvider
+} from '@rainbow-me/rainbowkit';
+import {
+    walletConnectWallet,
+    rainbowWallet,
+    metaMaskWallet
+} from '@rainbow-me/rainbowkit/wallets';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { polygonMumbai, polygon, mainnet } from '@wagmi/chains';
+
+import { publicProvider } from 'wagmi/providers/public';
+import {
+    currentWagmiChain,
+    AlchemyProviderPolygonTestnetAPIKey
+} from '@config';
+import rainbowWeb3AuthConnector from './Wagmi/Web3AuthConnectorInstance';
+
+// Configure chains & providers with the Alchemy provider.
+let { chains, provider } = configureChains(
+    [currentWagmiChain],
+    [
+        alchemyProvider({ apiKey: AlchemyProviderPolygonTestnetAPIKey }),
+        publicProvider() //fallback provider
+    ]
+);
+
+const connectors = connectorsForWallets([
+    {
+        groupName: 'Recommended',
+        wallets: [
+            rainbowWallet({ chains }),
+            walletConnectWallet({ chains }),
+            metaMaskWallet({ chains }),
+            rainbowWeb3AuthConnector({ chains })
+        ]
+    }
+]);
+
+const wagmiClient = createClient({
+    autoConnect: true,
+    connectors,
+    provider
+});
+
+interface WagmiProviderProps {
+    children: React.ReactNode;
+}
+
+export const WagmiProvider: React.FC<WagmiProviderProps> = ({ children }) => {
+    return (
+        <WagmiConfig client={wagmiClient}>
+            <RainbowKitProvider chains={chains}>{children}</RainbowKitProvider>
+        </WagmiConfig>
+    );
+};
