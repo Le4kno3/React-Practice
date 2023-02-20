@@ -14,8 +14,8 @@ import WithEffects from './components/useEffects/for_understanding_rendering/wit
 import WithoutEffects from './components/useEffects/for_understanding_rendering/without-useeffects/WithoutEffects'
 import SyncApp from './components/useEffects/for_synchronization/SyncApp'
 import CustomHooks from './components/customHooks/CustomHooks'
-import { WagmiProvider } from './components/wagmi1/WagmiContext'
-import Wagmi1 from './components/wagmi1/Wagmi1'
+import { WagmiProvider } from './components/wagmi/wagmi1/WagmiContext'
+import Wagmi1 from './components/wagmi/wagmi1/Wagmi1'
 import UseStateWagmiTest3 from './components/useState/UseStateWagmiTest3'
 
 const App = (): JSX.Element => {
