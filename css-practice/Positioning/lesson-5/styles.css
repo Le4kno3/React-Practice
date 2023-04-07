@@ -1,36 +1,36 @@
 body{
-  background: #eee;
+    background: #eee;
 }
 
 
 p{
-  padding:20px;
-  background: #eee;
-  font-family: arial;
-  line-height:1.43m;
+    padding:20px;
+    background: #eee;
+    font-family: arial;
+    line-height:1.43m;
 }
 
 .wrapper{
-  background: #fff;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+    background: #fff;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
     position: relative;
 }
 
 .wrapper:after{
     background: green;  /*setting background of empty contents*/
-  content: "";
-  display: block;   /*This element will bo display block*/
-  clear: both;
+    content: "";
+    display: block;   /*This element will bo display block*/
+    clear: both;
 }
 
 .content{
     padding: 10px;
     clear:left;
     margin: 20px 1%;
-    position: relative;
     left: 100px;
+    overflow: hidden;
 }
 
 .content p{
@@ -54,21 +54,21 @@ section, aside{
 }
 
 .column:after{
-  content: "";
-  display: block;   /*This element will bo display block*/
-  clear: both;
+    content: "";
+    display: block;   /*This element will bo display block*/
+    clear: both;
 }
 
 
 .services:after{
     background: green;  /*setting background of empty contents*/
-  content: "";
-  display: block;   /*This element will bo display block*/
-  clear: both;
+    content: "";
+    display: block;   /*This element will bo display block*/
+    clear: both;
 }
 
 .service h2, .service p{
-  color: #999;
+    color: #999;
     margin: 10px 0;
     text-align: center;
 }
@@ -76,12 +76,12 @@ section, aside{
 
 .services{
     background: #fff;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-    
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    max-height: 120px;
+    overflow: hidden;
 }
-
 
 
 .service{
@@ -120,7 +120,7 @@ section, aside{
     width: 100%;
     text-align: center;
     color: #fff;
-    
+
 }
 
 nav{
@@ -130,7 +130,7 @@ nav{
     width: 100%;
     top: 0px;
     left: 0px;
-    overflow: hidden;
+    z-index: 1;
 }
 
 nav ul:after{
