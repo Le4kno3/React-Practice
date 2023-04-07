@@ -1,0 +1,57 @@
+body{
+  background: #eee;
+}
+
+
+p{
+  padding:20px;
+  background: #eee;
+  font-family: arial;
+  line-height:1.43m;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrapper:after{
+    background: green;  /*setting background of empty contents*/
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}
+
+.content{
+    padding: 10px;
+    clear:left;
+    margin: 20px 1%
+}
+
+.content p{
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: 1px solid #ccc;
+    text-align: justify;
+}
+
+img{
+    float:right;
+    margin : 10px;  
+}
+
+section, aside{
+    float: left;
+    width: 46%;
+    padding: 1%;
+    margin: 1%;
+    background: #f2f2f2
+}
+
+.column:after{
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}

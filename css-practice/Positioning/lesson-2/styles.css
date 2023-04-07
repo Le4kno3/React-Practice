@@ -1,0 +1,80 @@
+body{
+  background: #eee;
+}
+
+
+p{
+  padding:20px;
+  background: #eee;
+  font-family: arial;
+  line-height:1.43m;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.services:after{
+    background: green;  /*setting background of empty contents*/
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}
+
+.service h2, .service p{
+  color: #999;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+.services{
+    background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+.service{
+    float: left;
+    background: #eee;
+    margin: 1%;
+    padding 1%;
+    height: 140px;
+}
+
+
+.content{
+    padding: 10px;
+    background: #ccc;
+    clear:left;
+    margin-top: 100px
+}
+
+img{
+    float:right;
+    margin : 10px;
+    
+}
+
+.blue{
+    background: blue;
+}
+
+.red{
+    background: red;
+}
+
+.green{
+    background: green;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+}

@@ -1,0 +1,147 @@
+body{
+  background: #eee;
+}
+
+
+p{
+  padding:20px;
+  background: #eee;
+  font-family: arial;
+  line-height:1.43m;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+    position: relative;
+}
+
+.wrapper:after{
+    background: green;  /*setting background of empty contents*/
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}
+
+.content{
+    padding: 10px;
+    clear:left;
+    margin: 20px 1%;
+    position: relative;
+    left: 100px;
+}
+
+.content p{
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 1px solid #ccc;
+    text-align: justify;
+}
+
+img{
+    float:right;
+    margin : 10px;  
+}
+
+section, aside{
+    float: left;
+    width: 46%;
+    padding: 1%;
+    margin: 1%;
+    background: #f2f2f2
+}
+
+.column:after{
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}
+
+
+.services:after{
+    background: green;  /*setting background of empty contents*/
+  content: "";
+  display: block;   /*This element will bo display block*/
+  clear: both;
+}
+
+.service h2, .service p{
+  color: #999;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+.services{
+    background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+    
+}
+
+
+
+.service{
+    float: left;
+    background: #eee;
+    margin: 1%;
+    padding 1%;
+    height: 140px;
+    position: relative;
+}
+
+.service:nth-child(1){
+    top: 5px;
+}
+
+.service:nth-child(2){
+    top: 15px;
+}
+
+.service:nth-child(3){
+    top: 25px;
+}
+
+
+#banner{
+    max-height: 300px;
+    overflow: hidden;
+    margin: 1%;
+    position: relative;
+}
+
+#banner h2{
+    position: absolute;
+    top: 30px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    
+}
+
+nav{
+    background: #333;
+    padding: 5px;
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    left: 5px;
+    overflow: hidden;
+}
+
+nav ul:after{
+    content:"";
+    display:block;
+    clear: both;
+}
+
+nav li{
+    list-style-type: none;
+    margin: 0 10px;
+    color: #fff;
+    float: right;
+}
